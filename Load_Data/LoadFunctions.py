@@ -4,7 +4,7 @@ Created on Sun Jan 24 20:31:58 2021
 
 @author: Ang Kai Yang
 """
-
+import matplotlib.pyplot as plt
 #Pipeline functions
 from datetime import datetime
 import calendar
