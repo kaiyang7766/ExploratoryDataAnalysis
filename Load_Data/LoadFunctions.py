@@ -46,7 +46,7 @@ def datapreparation(data, start_time, end_time, resize=1, neednormalizepressure 
     normalizepressure (data)
     data['Bar_Pressure'] = cleaned_pressure
 
-  return data
+ # return data
 
 def visualisation(data1, data2, name):
   f, axes = plt.subplots(1, 1, figsize=(16,8))
