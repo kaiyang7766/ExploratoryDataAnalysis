@@ -4,8 +4,11 @@ Created on Sun Jan 24 20:31:58 2021
 
 @author: Ang Kai Yang
 """
-import matplotlib.pyplot as plt
 #Pipeline functions
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sb
 from datetime import datetime
 import calendar
 def definetimerange (data,startTime,endTime):
