@@ -95,6 +95,7 @@ def modeChanged(data):
 #  print("Total number of Mode changed is :",totalNumberOfModeChanged)
   return timestampList
 
+import datetime
 def findErrorDuration(timestampList):
   errorCount = 0
   global errorList
