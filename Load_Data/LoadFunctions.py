@@ -137,8 +137,8 @@ import datetime
 def recalculateDuration(modelist):
   for i in range(len(modelist)-1):
     if isinstance(modelist[0][1],str) == True:
-      endtime = datetime.datetime.strptime(modelist[i][3], '%Y-%m-%d %H:%M:%S')
-      starttime = datetime.datetime.strptime(modelist[i][1], '%Y-%m-%d %H:%M:%S')
+      endtime = datetime.strptime(modelist[i][3], '%Y-%m-%d %H:%M:%S')
+      starttime = datetime.strptime(modelist[i][1], '%Y-%m-%d %H:%M:%S')
     else:
       endtime = modelist[i][3]
       starttime = modelist[i][1]
