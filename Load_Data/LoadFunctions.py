@@ -95,7 +95,6 @@ def modeChanged(data):
 #  print("Total number of Mode changed is :",totalNumberOfModeChanged)
   return timestampList
 
-import datetime
 def findErrorDuration(timestampList):
   errorCount = 0
   global errorList
@@ -134,6 +133,7 @@ def removeBackwardTimestampError(modeList):
       modeList.remove(modeList[0])
   return newModeList
 
+import datetime
 def recalculateDuration(modelist):
   for i in range(len(modelist)-1):
     if isinstance(modelist[0][1],str) == True:
