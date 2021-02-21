@@ -57,6 +57,18 @@ def visualisation(data1, data2, name):
   plt.ylabel('Bar pressure (kPa)')
   plt.xlabel('Time (s)')
   plt.show()
+
+def totalvisualization(data):
+    data_idle=data[~data.Mode.str.contains('MRT')]
+    data_mrt=data[~data.Mode.str.contains('Idle')]
+    plt.figure(figsize=(20,72))
+    for i, col in enumerate(['Acc_Lin_X', 'Acc_Lin_Y', 'Acc_Lin_Z', 'Acc_X', 'Acc_Y','Acc_Z', 'Bar_Pressure', 'Gyr_X', 'Gyr_Y', 'Gyr_Z','Loc_Altitude', 'Loc_Latitude', 'Loc_Longitude', 'Mag_X', 'Mag_Y','Mag_Z'],start=1):
+        plt.subplot(8,2,i)
+        plt.plot(data_mrt['Cleaned_Time'],data_mrt[col],'.y',label='MRT')
+        plt.plot(data_idle['Cleaned_Time'],data_idle[col],'.b',label='Idle')
+        plt.legend()
+        plt.xlabel('Time (s)')
+        plt.title(col)
   
 def modeChanged(data):
   totalNumberOfModeChanged = 0
