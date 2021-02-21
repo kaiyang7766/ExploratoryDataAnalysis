@@ -9,14 +9,14 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sb
-from datetime import datetime
+import datetime
 import calendar
 def definetimerange (data,startTime,endTime):
     global time_range
     time_range=data[(data['Time']>startTime)&(data['Time']<endTime)]
 def normalizetime (data,startTime):
     global cleaned_time
-    cleaned_time=(data['Timestamp']-calendar.timegm(datetime.strptime(startTime, "%Y-%m-%d %H:%M:%S.000").utctimetuple())*1000)/1000
+    cleaned_time=(data['Timestamp']-calendar.timegm(datetime.datetime.strptime(startTime, "%Y-%m-%d %H:%M:%S.000").utctimetuple())*1000)/1000
 def normalizepressure (data):
     global cleaned_pressure
     cleaned_pressure=data['Bar_Pressure']/10
@@ -133,12 +133,11 @@ def removeBackwardTimestampError(modeList):
       modeList.remove(modeList[0])
   return newModeList
 
-import datetime
 def recalculateDuration(modelist):
   for i in range(len(modelist)-1):
     if isinstance(modelist[0][1],str) == True:
-      endtime = datetime.strptime(modelist[i][3], '%Y-%m-%d %H:%M:%S')
-      starttime = datetime.strptime(modelist[i][1], '%Y-%m-%d %H:%M:%S')
+      endtime = datetime.datetime.strptime(modelist[i][3], '%Y-%m-%d %H:%M:%S')
+      starttime = datetime.datetime.strptime(modelist[i][1], '%Y-%m-%d %H:%M:%S')
     else:
       endtime = modelist[i][3]
       starttime = modelist[i][1]
