@@ -65,7 +65,7 @@ def visualisation(data1, data2, name):
     f, axes = plt.subplots(1, 1, figsize=(16,8))
     plt.plot(data1['Cleaned_Time'],data1['Bar_Pressure'],label='S6 Edge')
     if data2 is not None:
-    plt.plot(data2['Cleaned_Time'],data2['Bar_Pressure'],label='iPhone 12 Pro')
+        plt.plot(data2['Cleaned_Time'],data2['Bar_Pressure'],label='iPhone 12 Pro')
     plt.title(name)
     plt.legend()
     plt.ylabel('Bar pressure (kPa)')
