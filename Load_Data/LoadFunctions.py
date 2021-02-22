@@ -383,3 +383,23 @@ def silhouetteAnalysis(data):
                   fontsize=14, fontweight='bold')
 
   plt.show()
+
+def visualizationAfterClustering(data1, data2, data3, data4, data5, data6):
+    '''visualise the clustered variables'''
+    plt.figure(figsize=(20,72))
+    for i, col in enumerate(['Acc_Lin_X', 'Acc_Lin_Y', 'Acc_Lin_Z', 'Acc_X', 'Acc_Y','Acc_Z', 'Bar_Pressure', 'Gyr_X', 'Gyr_Y', 'Gyr_Z', 'Mag_X', 'Mag_Y','Mag_Z'],start=1):
+        plt.subplot(8,2,i)
+        plt.plot(data1[col],'.y',label='Cluster 1')
+        if data2 is not None:
+          plt.plot(data2[col],'.r',label='Cluster 2')
+        if data3 is not None:
+          plt.plot(data3[col],'.g',label='Cluster 3')
+        if data4 is not None:
+          plt.plot(data4[col],'.b',label='Cluster 4')
+        if data5 is not None:
+          plt.plot(data5[col],'.c',label='Cluster 5')
+        if data6 is not None:
+          plt.plot(data6[col],'.m',label='Cluster 6')
+        plt.legend()
+        plt.xlabel('Time') #actually is the index count
+        plt.title(col)
