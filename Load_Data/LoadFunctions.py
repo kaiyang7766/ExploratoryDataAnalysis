@@ -56,8 +56,8 @@ def datapreparation(data, start_time, end_time, resize=1, neednormalizepressure 
 
     #normalise pressure
     if neednormalizepressure == True:
-    normalizepressure (data)
-    data['Bar_Pressure'] = cleaned_pressure
+        normalizepressure (data)
+        data['Bar_Pressure'] = cleaned_pressure
     return data
 
 def visualisation(data1, data2, name):
