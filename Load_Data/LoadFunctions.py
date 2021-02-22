@@ -12,17 +12,17 @@ import seaborn as sb
 import datetime
 import calendar
 
-def definetimerange (data,startTime,endTime):
+def definetimerange(data,startTime,endTime):
     '''counts the duration in seconds of current timestamp from the start time'''
     global time_range
     time_range=data[(data['Time']>startTime)&(data['Time']<endTime)]
     
-def normalizetime (data,startTime):
+def normalizetime(data,startTime):
     '''create a new column in dataframe where duration of current timestamp from start time is calculated in seconds'''
     global cleaned_time
     cleaned_time=(data['Timestamp']-calendar.timegm(datetime.datetime.strptime(startTime, "%Y-%m-%d %H:%M:%S.000").utctimetuple())*1000)/1000
     
-def normalizepressure (data):
+def normalizepressure(data):
     '''change the unit of Bar_Pressure of data recorded in S6 edge'''
     '''as the Bar_Pressure of S6 edge is recorded in hPa'''
     '''while Bar_Pressure of iphone is recorded in kPa'''
