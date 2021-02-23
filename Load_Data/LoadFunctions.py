@@ -403,4 +403,4 @@ def silhouetteAnalysis(data):
                       "with n_clusters = %d" % n_clusters),
                      fontsize=14, fontweight='bold')
 
-  plt.show()
+        plt.show()
